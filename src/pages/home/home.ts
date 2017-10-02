@@ -78,8 +78,6 @@ export class HomePage {
     }
 
 
-
-
     return dia + Nfecha.getDate() + mes + Nfecha.getFullYear()+ ", " + Nfecha.getHours() + ":" + Nfecha.getMinutes()
   }
 
