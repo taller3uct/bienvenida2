@@ -7,10 +7,14 @@
 </ion-header>
 
 <ion-content padding>
-  <button ion-button color="danger" icon-end large block (click)="motrar_modal()">
+  <!-- <button ion-button color="danger" icon-end large block (click)="motrar_modal()">
     Alerta
     <ion-icon name="alert"></ion-icon>
-  </button>
+  </button> -->
+  <ion-fab top right>
+      <button ion-fab color="danger" (click)="motrar_modal()"><ion-icon name="alert"></ion-icon></button>
+  </ion-fab>
+
   <h1>Ultimas alertas</h1>
   <ion-card *ngFor="let alerta of (alertas | async)?.reverse()">
     <!-- <img [src]="alerta.img"> -->
