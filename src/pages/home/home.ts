@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, ModalController } from 'ionic-angular';
+import { NavController, ModalController, MenuController } from 'ionic-angular';
 import { SubirPage } from "../subir/subir";
 
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
@@ -13,7 +13,7 @@ export class HomePage {
   //Nfecha = new Date(this.fecha.getDate() + 1506698739642)
 
 
-  constructor(public navCtrl: NavController, private afDB: AngularFireDatabase, private modalCtrl: ModalController) {
+  constructor(public navCtrl: NavController, private afDB: AngularFireDatabase, private modalCtrl: ModalController, private menuCtrl:MenuController) {
     this.alertas = afDB.list('/alertas',{
       query:{
           orderByChild: "tiempo"
@@ -80,5 +80,17 @@ export class HomePage {
 
     return dia + Nfecha.getDate() + mes + Nfecha.getFullYear()+ ", " + Nfecha.getHours() + ":" + Nfecha.getMinutes()
   }
+
+  openMenu() {
+   this.menuCtrl.open();
+ }
+
+ closeMenu() {
+   this.menuCtrl.close();
+ }
+
+ toggleMenu() {
+   this.menuCtrl.toggle();
+ }
 
 }
