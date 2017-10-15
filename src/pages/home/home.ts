@@ -10,7 +10,6 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 })
 export class HomePage {
   alertas: FirebaseListObservable<any[]>;
-  //Nfecha = new Date(this.fecha.getDate() + 1506698739642)
 
 
   constructor(public navCtrl: NavController, private afDB: AngularFireDatabase, private modalCtrl: ModalController, private menuCtrl:MenuController) {
